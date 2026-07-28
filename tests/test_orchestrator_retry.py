@@ -21,19 +21,16 @@ class StepWiseStatefulMockLLM(LLMClient):
         prompt_lower = prompt.lower()
         sys_lower = system_prompt.lower()
 
-        # Generator step
-        if "user question" in prompt_lower or "context passages" in prompt_lower:
-            self.attempt += 1
-            if self.attempt == 1:
-                # Attempt 1: Return a hallucinated answer mentioning unsupported RSA 8192-bit keys
-                return "Data in transit uses TLS 1.3 and mandatory RSA 8192-bit quantum-proof encryption [1]."
-            else:
-                # Attempt 2: Return a clean grounded answer
-                return "Data in transit must strictly use TLS 1.3 or higher [1]."
+        # 1. Reformulator check (highest priority when prompt has REFORMULATION JSON)
+        if "reformulation json:" in prompt_lower or "original query:" in prompt_lower:
+            return json.dumps({
+                "reformulated_query": "What are the verified encryption standards for data in transit?",
+                "reasoning": "Focusing query specifically on data in transit encryption rules."
+            })
 
-        # Critic step
+        # 2. Critic check (when system prompt mentions critic or evaluator)
         if "critic" in sys_lower or "evaluator" in sys_lower:
-            if self.attempt == 1:
+            if self.attempt <= 1:
                 return json.dumps({
                     "grounded": False,
                     "unsupported_claims": ["Mandatory RSA 8192-bit quantum-proof encryption is required."],
@@ -48,12 +45,15 @@ class StepWiseStatefulMockLLM(LLMClient):
                     "reason": "All claims are directly grounded in passage [1]."
                 })
 
-        # Reformulator step
-        if "reformulate" in sys_lower or "query optimizer" in sys_lower:
-            return json.dumps({
-                "reformulated_query": "What are the verified encryption standards for data in transit?",
-                "reasoning": "Focusing query specifically on data in transit encryption rules."
-            })
+        # 3. Generator check (when user question or context passages present)
+        if "user question:" in prompt_lower or "context passages:" in prompt_lower:
+            self.attempt += 1
+            if self.attempt == 1:
+                # Attempt 1: Return a hallucinated answer mentioning unsupported RSA 8192-bit keys
+                return "Data in transit uses TLS 1.3 and mandatory RSA 8192-bit quantum-proof encryption [1]."
+            else:
+                # Attempt 2: Return a clean grounded answer
+                return "Data in transit must strictly use TLS 1.3 or higher [1]."
 
         return "Default response"
 

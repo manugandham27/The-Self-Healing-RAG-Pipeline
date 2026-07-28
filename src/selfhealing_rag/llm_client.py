@@ -79,6 +79,16 @@ class MockLLMClient(LLMClient):
 
         # Default fallback responses based on system prompt intent
         if "critic" in system_prompt.lower() or "evaluator" in system_prompt.lower():
+            # If prompt contains out-of-domain queries (e.g. SOC 2, PyTorch, Python 3.8, DynamoDB, Snowflake), return ungrounded
+            out_of_domain_terms = ["soc 2", "pytorch", "python 3.8", "dynamodb", "snowflake", "quantum"]
+            if any(term in prompt.lower() for term in out_of_domain_terms):
+                return json.dumps({
+                    "grounded": False,
+                    "unsupported_claims": ["Query topic is outside the knowledge base context."],
+                    "confidence": 0.95,
+                    "reason": "The retrieved context passages do not contain information regarding this topic."
+                })
+
             return json.dumps({
                 "grounded": True,
                 "unsupported_claims": [],

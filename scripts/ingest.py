@@ -1,9 +1,13 @@
 """Document ingestion script to chunk, embed, and index sample files into ChromaDB."""
 
 import os
+import sys
 import glob
 import logging
 from typing import List, Dict, Any
+
+# Add src path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
 
 from selfhealing_rag.config import settings
 from selfhealing_rag.vector_store import ChromaVectorStore
