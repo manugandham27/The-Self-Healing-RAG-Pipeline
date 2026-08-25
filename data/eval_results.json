@@ -1,0 +1,291 @@
+{
+  "baseline": [
+    {
+      "id": 1,
+      "query": "What encryption standard is required for data in transit and at rest?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.17534995079040527,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 2,
+      "query": "What is the mandatory container user UID for Kubernetes pods?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.011003971099853516,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 3,
+      "query": "What is the minimum retention period for audit logs?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.007897138595581055,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 4,
+      "query": "Which ports are strictly disabled across public cloud network interfaces?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.00791311264038086,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 5,
+      "query": "What base image policy is required for container Docker builds?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.006583213806152344,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 6,
+      "query": "What key management service must be used for AES-256 encryption keys?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.007248878479003906,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 7,
+      "query": "What is required before deploying custom LLMs to production?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.007162809371948242,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 8,
+      "query": "What point-in-time recovery retention is required for production databases?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.006412029266357422,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 9,
+      "query": "How are customer interaction logs scrubbed before storing in vector database?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.007390022277832031,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 10,
+      "query": "What protection ingress controllers are placed in front of API Gateways?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.0075531005859375,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 11,
+      "query": "What is the mandatory SOC 2 Type II audit frequency for AI models?",
+      "is_supported": false,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.007447957992553711,
+      "hallucinated": true,
+      "fallback": false
+    },
+    {
+      "id": 12,
+      "query": "What is the maximum allowed GPU memory allocation for PyTorch training jobs?",
+      "is_supported": false,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.007716178894042969,
+      "hallucinated": true,
+      "fallback": false
+    },
+    {
+      "id": 13,
+      "query": "What is the company policy regarding Python 3.8 support deprecation timelines?",
+      "is_supported": false,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.007231950759887695,
+      "hallucinated": true,
+      "fallback": false
+    },
+    {
+      "id": 14,
+      "query": "What is the maximum size limit for DynamoDB table partitions?",
+      "is_supported": false,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.006893157958984375,
+      "hallucinated": true,
+      "fallback": false
+    },
+    {
+      "id": 15,
+      "query": "What is the default timeout setting for Snowflake data warehouse queries?",
+      "is_supported": false,
+      "status": "SUCCESS_FIRST_TRY",
+      "latency": 0.008348941802978516,
+      "hallucinated": true,
+      "fallback": false
+    }
+  ],
+  "self_healing": [
+    {
+      "id": 1,
+      "query": "What encryption standard is required for data in transit and at rest?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.0072591304779052734,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 2,
+      "query": "What is the mandatory container user UID for Kubernetes pods?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.006274700164794922,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 3,
+      "query": "What is the minimum retention period for audit logs?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.0060999393463134766,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 4,
+      "query": "Which ports are strictly disabled across public cloud network interfaces?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.0061740875244140625,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 5,
+      "query": "What base image policy is required for container Docker builds?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.006006956100463867,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 6,
+      "query": "What key management service must be used for AES-256 encryption keys?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.006250858306884766,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 7,
+      "query": "What is required before deploying custom LLMs to production?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.006100893020629883,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 8,
+      "query": "What point-in-time recovery retention is required for production databases?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.0068399906158447266,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 9,
+      "query": "How are customer interaction logs scrubbed before storing in vector database?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.006120920181274414,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 10,
+      "query": "What protection ingress controllers are placed in front of API Gateways?",
+      "is_supported": true,
+      "status": "SUCCESS_FIRST_TRY",
+      "attempts": 1,
+      "latency": 0.006058931350708008,
+      "hallucinated": false,
+      "fallback": false
+    },
+    {
+      "id": 11,
+      "query": "What is the mandatory SOC 2 Type II audit frequency for AI models?",
+      "is_supported": false,
+      "status": "FALLBACK",
+      "attempts": 3,
+      "latency": 0.01890087127685547,
+      "hallucinated": false,
+      "fallback": true
+    },
+    {
+      "id": 12,
+      "query": "What is the maximum allowed GPU memory allocation for PyTorch training jobs?",
+      "is_supported": false,
+      "status": "FALLBACK",
+      "attempts": 3,
+      "latency": 0.019337892532348633,
+      "hallucinated": false,
+      "fallback": true
+    },
+    {
+      "id": 13,
+      "query": "What is the company policy regarding Python 3.8 support deprecation timelines?",
+      "is_supported": false,
+      "status": "FALLBACK",
+      "attempts": 3,
+      "latency": 0.01874399185180664,
+      "hallucinated": false,
+      "fallback": true
+    },
+    {
+      "id": 14,
+      "query": "What is the maximum size limit for DynamoDB table partitions?",
+      "is_supported": false,
+      "status": "FALLBACK",
+      "attempts": 3,
+      "latency": 0.01839900016784668,
+      "hallucinated": false,
+      "fallback": true
+    },
+    {
+      "id": 15,
+      "query": "What is the default timeout setting for Snowflake data warehouse queries?",
+      "is_supported": false,
+      "status": "FALLBACK",
+      "attempts": 3,
+      "latency": 0.018241167068481445,
+      "hallucinated": false,
+      "fallback": true
+    }
+  ]
+}
