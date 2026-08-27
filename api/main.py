@@ -37,8 +37,8 @@ app.add_middleware(
 
 class QueryRequest(BaseModel):
     """Request schema for /query endpoint."""
-    query: str = Field(..., example="What are the encryption requirements for enterprise AI vector databases?")
-    max_retries: Optional[int] = Field(None, example=2)
+    query: str = Field(..., json_schema_extra={"example": "What are the encryption requirements for enterprise AI vector databases?"})
+    max_retries: Optional[int] = Field(None, json_schema_extra={"example": 2})
     enable_self_healing: bool = Field(True, description="Toggle self-healing retry loop on/off")
 
 
