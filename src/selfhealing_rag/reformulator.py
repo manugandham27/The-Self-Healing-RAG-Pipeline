@@ -1,10 +1,11 @@
 """Query Reformulator component triggered upon Critic rejection."""
 
 import json
-import re
 import logging
-from selfhealing_rag.schemas import CriticVerdict, ReformulationResult
+import re
+
 from selfhealing_rag.llm_client import LLMClient
+from selfhealing_rag.schemas import CriticVerdict, ReformulationResult
 
 logger = logging.getLogger(__name__)
 

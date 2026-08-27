@@ -2,7 +2,8 @@
 
 import logging
 from typing import List, Optional
-from selfhealing_rag.schemas import DocumentChunk, CriticVerdict
+
+from selfhealing_rag.schemas import CriticVerdict, DocumentChunk
 
 logger = logging.getLogger(__name__)
 

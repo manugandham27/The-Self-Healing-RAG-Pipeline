@@ -2,14 +2,15 @@
 
 import os
 import sys
+
 import pytest
 
 # Add src path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
 
+from selfhealing_rag.llm_client import MockLLMClient
 from selfhealing_rag.schemas import DocumentChunk
 from selfhealing_rag.vector_store import ChromaVectorStore
-from selfhealing_rag.llm_client import MockLLMClient
 
 
 @pytest.fixture

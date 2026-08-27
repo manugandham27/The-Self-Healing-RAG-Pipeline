@@ -2,19 +2,20 @@
 
 import logging
 from typing import Optional
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from selfhealing_rag.config import settings
-from selfhealing_rag.schemas import PipelineResponse
-from selfhealing_rag.llm_client import AnthropicLLMClient, MockLLMClient
-from selfhealing_rag.vector_store import ChromaVectorStore
-from selfhealing_rag.retriever import Retriever
-from selfhealing_rag.generator import Generator
 from selfhealing_rag.critic import Critic
-from selfhealing_rag.reformulator import QueryReformulator
+from selfhealing_rag.generator import Generator
+from selfhealing_rag.llm_client import AnthropicLLMClient, MockLLMClient
 from selfhealing_rag.orchestrator import Orchestrator
+from selfhealing_rag.reformulator import QueryReformulator
+from selfhealing_rag.retriever import Retriever
+from selfhealing_rag.schemas import PipelineResponse
+from selfhealing_rag.vector_store import ChromaVectorStore
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -116,4 +117,4 @@ def trigger_ingest():
         return IngestResponse(status="success", message="Sample documentation ingested into ChromaDB successfully.")
     except Exception as e:
         logger.error(f"Ingestion error: {e}", exc_info=True)
-        raise HTTPException(status_code=500, detail=f"Ingestion failed: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Ingestion failed: {e!s}")

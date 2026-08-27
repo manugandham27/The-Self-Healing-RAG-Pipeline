@@ -2,7 +2,7 @@
 
 import logging
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List, Optional
 
 from selfhealing_rag.config import settings
 from selfhealing_rag.schemas import DocumentChunk
@@ -21,12 +21,10 @@ class VectorStore(ABC):
         metadatas: Optional[List[Dict[str, Any]]] = None
     ) -> None:
         """Add documents and embeddings to the store."""
-        pass
 
     @abstractmethod
     def search(self, query: str, top_k: int = 3) -> List[DocumentChunk]:
         """Search for top_k most similar document chunks given a query."""
-        pass
 
 
 class ChromaVectorStore(VectorStore):

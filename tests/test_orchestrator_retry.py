@@ -1,14 +1,13 @@
 """Integration test deliberately forcing a hallucination-and-retry self-healing scenario."""
 
 import json
-from typing import Dict, Any, List
-from selfhealing_rag.schemas import DocumentChunk
-from selfhealing_rag.llm_client import LLMClient
-from selfhealing_rag.retriever import Retriever
-from selfhealing_rag.generator import Generator
+
 from selfhealing_rag.critic import Critic
-from selfhealing_rag.reformulator import QueryReformulator
+from selfhealing_rag.generator import Generator
+from selfhealing_rag.llm_client import LLMClient
 from selfhealing_rag.orchestrator import Orchestrator
+from selfhealing_rag.reformulator import QueryReformulator
+from selfhealing_rag.retriever import Retriever
 
 
 class StepWiseStatefulMockLLM(LLMClient):

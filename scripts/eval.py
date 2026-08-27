@@ -1,23 +1,22 @@
 """Empirical Evaluation Benchmark comparing Baseline RAG vs Self-Healing RAG."""
 
+import json
+import logging
 import os
 import sys
 import time
-import json
-import logging
-from typing import List, Dict, Any
 
 # Add src path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../src")))
 
 from selfhealing_rag.config import settings
-from selfhealing_rag.llm_client import AnthropicLLMClient, MockLLMClient
-from selfhealing_rag.vector_store import ChromaVectorStore
-from selfhealing_rag.retriever import Retriever
-from selfhealing_rag.generator import Generator
 from selfhealing_rag.critic import Critic
-from selfhealing_rag.reformulator import QueryReformulator
+from selfhealing_rag.generator import Generator
+from selfhealing_rag.llm_client import AnthropicLLMClient, MockLLMClient
 from selfhealing_rag.orchestrator import Orchestrator
+from selfhealing_rag.reformulator import QueryReformulator
+from selfhealing_rag.retriever import Retriever
+from selfhealing_rag.vector_store import ChromaVectorStore
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)

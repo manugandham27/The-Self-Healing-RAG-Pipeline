@@ -2,6 +2,7 @@
 
 import logging
 from typing import List, Optional
+
 from selfhealing_rag.config import settings
 from selfhealing_rag.schemas import DocumentChunk
 from selfhealing_rag.vector_store import VectorStore

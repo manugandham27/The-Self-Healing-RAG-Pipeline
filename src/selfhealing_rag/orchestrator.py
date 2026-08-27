@@ -1,20 +1,20 @@
 """Orchestrator state machine controlling the self-healing retrieve-generate-critique-retry loop."""
 
-import time
 import logging
-from typing import Optional, List
+import time
+from typing import List, Optional
 
 from selfhealing_rag.config import settings
+from selfhealing_rag.critic import Critic
+from selfhealing_rag.fallback import FallbackHandler
+from selfhealing_rag.generator import Generator
+from selfhealing_rag.reformulator import QueryReformulator
+from selfhealing_rag.retriever import Retriever
 from selfhealing_rag.schemas import (
     AttemptTrace,
-    PipelineResponse,
     CriticVerdict,
+    PipelineResponse,
 )
-from selfhealing_rag.retriever import Retriever
-from selfhealing_rag.generator import Generator
-from selfhealing_rag.critic import Critic
-from selfhealing_rag.reformulator import QueryReformulator
-from selfhealing_rag.fallback import FallbackHandler
 
 logger = logging.getLogger(__name__)
 

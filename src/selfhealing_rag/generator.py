@@ -1,10 +1,11 @@
 """Generator stage for creating answers with inline citations from retrieved context."""
 
-import re
 import logging
+import re
 from typing import List
-from selfhealing_rag.schemas import DocumentChunk, GenerationResult, Citation
+
 from selfhealing_rag.llm_client import LLMClient
+from selfhealing_rag.schemas import Citation, DocumentChunk, GenerationResult
 
 logger = logging.getLogger(__name__)
 

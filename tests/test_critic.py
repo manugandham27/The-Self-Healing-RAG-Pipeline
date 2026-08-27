@@ -1,9 +1,10 @@
 """Tests for Critic claim verification and verdict parsing."""
 
 import json
+
 from selfhealing_rag.critic import Critic
-from selfhealing_rag.schemas import GenerationResult, Citation
 from selfhealing_rag.llm_client import MockLLMClient
+from selfhealing_rag.schemas import Citation, GenerationResult
 
 
 def test_critic_accepted_verdict(sample_chunks):

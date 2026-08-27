@@ -1,12 +1,13 @@
 """Critic stage for claim verification, groundedness evaluation, and structured verdicts."""
 
 import json
-import re
 import logging
+import re
 from typing import List
-from selfhealing_rag.schemas import DocumentChunk, GenerationResult, CriticVerdict
-from selfhealing_rag.llm_client import LLMClient
+
 from selfhealing_rag.config import settings
+from selfhealing_rag.llm_client import LLMClient
+from selfhealing_rag.schemas import CriticVerdict, DocumentChunk, GenerationResult
 
 logger = logging.getLogger(__name__)
 
@@ -82,7 +83,7 @@ class Critic:
                 grounded=False,
                 unsupported_claims=["Failed to parse structured critic response"],
                 confidence=0.0,
-                reason=f"Parse error: {str(e)}"
+                reason=f"Parse error: {e!s}"
             )
 
     def evaluate(

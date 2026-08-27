@@ -3,7 +3,7 @@
 import json
 import logging
 from abc import ABC, abstractmethod
-from typing import Dict, Any, Optional
+from typing import Any, Dict, Optional
 
 from selfhealing_rag.config import settings
 
@@ -16,7 +16,6 @@ class LLMClient(ABC):
     @abstractmethod
     def generate(self, prompt: str, system_prompt: str = "") -> str:
         """Generate text from a prompt."""
-        pass
 
 
 class AnthropicLLMClient(LLMClient):
